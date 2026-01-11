@@ -36,7 +36,6 @@ public class CTDScreenieClient {
 
         int interval = Config.CLIENT.screenshotIntervalTicks.get();
 
-        if (tickCounter >= interval) {
         if (tickCounter >= interval && (!Config.CLIENT.disableScreenshot.getAsBoolean())) {
             tickCounter = 0;
             takeScreenshot(mc);
@@ -48,7 +47,7 @@ public class CTDScreenieClient {
                 mc.gameDirectory,
                 mc.getMainRenderTarget(),
                 component -> {
-                    if (mc.player != null) {
+                    if (mc.player != null && (!Config.CLIENT.disableChatSend.getAsBoolean())) {
                         mc.player.sendSystemMessage(component);
                     }
                 }

@@ -2,4 +2,5 @@
   "ctdscreenie.configuration.general": "CTD Screenie Settings",
   "ctdscreenie.configuration.screenshotIntervalTicks": "Ticks between Screenshots",
   "ctdscreenie.configuration.disableScreenshot": "Disable Autoscreenshot",
+  "ctdscreenie.configuration.disableChatSend": "Disable Chat Message"
 }

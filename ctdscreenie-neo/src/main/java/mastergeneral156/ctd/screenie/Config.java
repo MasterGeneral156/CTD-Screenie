@@ -37,6 +37,8 @@ public class Config {
                     .defineInRange("screenshotIntervalTicks", 6000, 20, Integer.MAX_VALUE);
 
             disableScreenshot = builder.comment("Disable all features of this mod").define("disableScreenshot", false);
+            disableChatSend = builder.comment("Disable sending a chat message").define("disableChatSend", false);
+
             builder.pop();
         }
     }
