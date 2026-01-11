@@ -37,6 +37,7 @@ public class CTDScreenieClient {
         int interval = Config.CLIENT.screenshotIntervalTicks.get();
 
         if (tickCounter >= interval) {
+        if (tickCounter >= interval && (!Config.CLIENT.disableScreenshot.getAsBoolean())) {
             tickCounter = 0;
             takeScreenshot(mc);
         }

@@ -26,6 +26,8 @@ public class Config {
 
     public static class Client {
         public final ModConfigSpec.IntValue screenshotIntervalTicks;
+        public final ModConfigSpec.BooleanValue disableScreenshot;
+        public final ModConfigSpec.BooleanValue disableChatSend;
 
         Client(ModConfigSpec.Builder builder) {
             builder.push("general");
@@ -34,6 +36,7 @@ public class Config {
                     .comment("Ticks between automatic screenshots (20 ticks = 1 second)")
                     .defineInRange("screenshotIntervalTicks", 6000, 20, Integer.MAX_VALUE);
 
+            disableScreenshot = builder.comment("Disable all features of this mod").define("disableScreenshot", false);
             builder.pop();
         }
     }
