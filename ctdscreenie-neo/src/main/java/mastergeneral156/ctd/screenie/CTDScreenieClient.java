@@ -39,15 +39,18 @@ public class CTDScreenieClient {
     }
 
     private static void takeScreenshot(Minecraft mc) {
-        Screenshot.grab(
-                mc.gameDirectory,
-                mc.getMainRenderTarget(),
-                component -> {
-                    if (mc.player != null && (!Config.CLIENT.disableChatSend.getAsBoolean())) {
-                        mc.player.sendSystemMessage(component);
+        assert mc.level != null;
+        if (mc.level.isClientSide()) {
+            Screenshot.grab(
+                    mc.gameDirectory,
+                    mc.getMainRenderTarget(),
+                    component -> {
+                        if (mc.player != null && (!Config.CLIENT.disableChatSend.getAsBoolean())) {
+                            mc.player.sendSystemMessage(component);
+                        }
                     }
-                }
-        );
+            );
+        }
     }
 
 
