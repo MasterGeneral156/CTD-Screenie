@@ -1,5 +1,5 @@
 /*
-	Project:	CTD Screenie 26.1.1
+	Project:	CTD Screenie 26.2
 	File:		mastergeneral156.ctd.screenie.CTDScreenieClient
 	Author:		TheMasterGeneral
 	Website: 	https://github.com/MasterGeneral156/CTD-Screenie
