@@ -27,6 +27,7 @@
 */
 package mastergeneral156.ctd.screenie;
 
+import com.mojang.blaze3d.pipeline.RenderTarget;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Screenshot;
 import net.neoforged.api.distmarker.Dist;
@@ -68,7 +69,7 @@ public class CTDScreenieClient {
         if (mc.level.isClientSide()) {
             Screenshot.grab(
                     mc.gameDirectory,
-                    mc.getMainRenderTarget(),
+                    mc.gameRenderer.mainRenderTarget(),
                     component -> {
                         if (mc.player != null && (!Config.CLIENT.disableChatSend.getAsBoolean())) {
                             mc.player.sendSystemMessage(component);
